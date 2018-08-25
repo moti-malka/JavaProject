@@ -10,11 +10,11 @@ export class CustomerService {
   constructor(private http: HttpClient) { }
 
   getAllCoupons(): Observable<any> {
-    return this.http.get("/api/customer/get-all-coupons")
+    return this.http.get("/api/customer/couponsGetAll")
   }
 
   purchaseCoupon(customerId: string, couponId: string): Observable<any> {
-    return this.http.get("/api/customer/purchase-coupon/" + couponId, {
+    return this.http.get("/api/customer/couponPurchase/" + couponId, {
       params: {
         "customer_id": customerId
       }
@@ -22,7 +22,7 @@ export class CustomerService {
   }
 
   getPurchasedCoupons(customerId: string): Observable<any> {
-    return this.http.get("/api/customer/get-coupons/" + customerId)
+    return this.http.get("/api/customer/couponsGet/" + customerId)
   }
 
 }
