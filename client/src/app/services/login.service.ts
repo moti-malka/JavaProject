@@ -22,6 +22,6 @@ export class LoginService {
   }
 
   logout() {
-    return this.http.get("/api/logout", {responseType: 'text'})
+    return this.http.get("/api/logoff", {responseType: 'text'})
   }
 }
