@@ -7,7 +7,7 @@ import { Company } from '../models/company';
 @Injectable({
   providedIn: 'root'
 })
-export class managerService {
+export class AdminService {
 
   company: Company
   customer: Customer
