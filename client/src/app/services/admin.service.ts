@@ -7,7 +7,7 @@ import { Company } from '../models/company';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminService {
+export class managerService {
 
   company: Company
   customer: Customer
@@ -17,19 +17,19 @@ export class AdminService {
   // Companies
 
   getAllCompanies(): Observable<any> {
-    return this.http.get("/api/admin/get-all-companies")
+    return this.http.get("/api/manager/companiesGetAll")
   }
 
   getCompany(id: string): Observable<any> {
-    return this.http.get("/api/admin/get-company/" + id)
+    return this.http.get("/api/manager/companyGet/" + id)
   }
 
   saveCompany(company: Company): Observable<any> {
-    return this.http.post("/api/admin/save-company", company)
+    return this.http.post("/api/manager/companySave", company)
   }
 
   removeCompany(id: string): Observable<any> {
-    return this.http.get("/api/admin/delete-company/" + id)
+    return this.http.get("/api/manager/companyDelete/" + id)
   }
   
   setCompanyModel(c: Company) {
@@ -43,19 +43,19 @@ export class AdminService {
   // Customers
 
   getAllCustomers(): Observable<any> {
-    return this.http.get("/api/admin/get-all-customers")
+    return this.http.get("/api/manager/customersGetAll")
   }
 
   getCustomer(id: string): Observable<any> {
-    return this.http.get("/api/admin/get-customer/" + id)
+    return this.http.get("/api/manager/customerGet/" + id)
   }
 
   saveCustomer(company: Company): Observable<any> {
-    return this.http.post("/api/admin/save-customer", company)
+    return this.http.post("/api/manager/customerSave", company)
   }
 
   removeCustomer(id: string): Observable<any> {
-    return this.http.get("/api/admin/delete-customer/" + id)
+    return this.http.get("/api/manager/customerDelete/" + id)
   }
 
   setCustomerModel(c: Customer) {
